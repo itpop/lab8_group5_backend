@@ -3,21 +3,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends Application {
-
+	// index method - render the home page
 	public function index()
 	{
-		$result = '';
-		$oddrow = true;
-		foreach ($this->categories->all() as $category)
-		{
-//			$viewparms = array(
-//				'direction' => ($oddrow ? 'left' : 'right')
-//			);
-//			$viewparms = array_merge($viewparms, $category);
-			$category->direction = ($oddrow ? 'left' : 'right');
-			$result .= $this->parser->parse('category-home', $category, true);
-			$oddrow = ! $oddrow;
-		}
+		$result = 'Group5 Backend';
+		
 		$this->data['content'] = $result;
 		$this->render();
 	}
